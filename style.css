@@ -56,10 +56,12 @@ color: white;
 }
 
 .l-top_menu-v2 {
-	background-color: rgba(0, 0, 0, 0.4);
-  
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 6px, black calc(100% - 6px), transparent),
-                      linear-gradient(to right, transparent, black 6px, black calc(100% - 6px), transparent);
+	background: linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 0.4) 0%,
+  rgba(0, 0, 0, 0.4) calc(100% - 6px),
+  rgba(0, 0, 0, 0) 100%
+);
   
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
@@ -101,10 +103,14 @@ h1, h2, h3, h4 {
 }
 
 .l-top_menu-v2 .submenu {
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    border-left: 1px solid rgba(0, 0, 0, 0.4);
-    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 6px, black calc(100% - 6px), transparent),
+                      linear-gradient(to right, transparent, black 6px, black calc(100% - 6px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    border-right: 1px solid rgba(0, 0, 0, 0);
     display: none;
     font-family: var(--font-alt);
     overflow: hidden;
@@ -196,6 +202,7 @@ h1, h2, h3, h4 {
     border: 1px solid #defdce;
     -webkit-transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
     transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    margin-bottom: 9px;
 }
 
 .p-dashboards-show .v2 .fc-user-sections .tag-link.anime-tag {
@@ -300,6 +307,11 @@ html::-webkit-scrollbar-thumb:hover {
     padding: 5px 10px;
 }
 
+.b-entry-info .line .value {
+    color: #2b537b;
+    display: inline;
+}
+
 .p-topics header h1 a.reload {
     color: #204469;
     cursor: pointer;
@@ -387,25 +399,6 @@ img:hover {
 	}
 }
 
-.logo-container {
-    animation: none;
-}
-
-.logo-container:hover {
-    animation: animate_pulse 1.5s infinite;
-}
-
-@keyframes animate_pulse {
-	0% {
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
-	}
-	70% {
-		box-shadow: 0 0 0 10px rgba(228, 25, 49, 0);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(228, 25, 49, 0);
-	}
-}
 
 .tag-link {
     animation: none;
@@ -427,4 +420,89 @@ img:hover {
 	}
 }
 
+.l-top_menu-v2 .global-search input {
+    background: #ffffff00;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid white;
+    color: #123;
+    font-size: 14px;
+    line-height: 28px;
+    padding: 1px 42px 0 38px;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin-bottom: 6px;
+}
 
+.l-top_menu-v2 .global-search .hotkey-marker
+    {
+    display: none;
+}
+
+.b-spoiler_block>div
+ {
+    background-color: #000000a1;
+    border-left: 4px solid #678;
+    padding: 3px 3px 3px 14px;
+    pointer-events: all;
+}
+
+.p-user_rates-index .list-groups .summary.posters {
+    border: 1px solid #ffcdcd00;
+    background-color: #00000000;
+    padding: 5px 10px 5px 10px;
+}
+
+.b-collection_search .field input {
+    border: 1px solid rgb(172 177 180 / 81%);
+    line-height: 34px;
+    padding: 2px 42px 0 13px;
+    width: 100%;
+    background-color: #00000000;
+    border-radius: 7px;
+}
+
+.b-input input
+ {
+    background-color: #00000000;
+    border: 1px solid #ddd;
+    color: #ffffff;
+    -webkit-border-radius: 0;
+    border-radius: 7px;
+    line-height: 27px;
+    margin: 0;
+    padding: 0 7px;
+    width: 100%;
+}
+
+.b-input input[disabled]
+{
+    background: #eeeeee00;
+    color: #666;
+}
+
+.b-input select {
+    max-width: 100%;
+    background-color: #ffffff00;
+    color: #176093;
+}
+
+.b-tag {
+    border-bottom: 1px dashed #bbb;
+    color: #326291;
+    cursor: default;
+    display: inline-block;
+    font-family: var(--font-alt);
+    letter-spacing: var(--font-alt-text-letter-spacing);
+    line-height: 16px;
+    margin-left: 3px;
+    margin-right: 9px;
+    padding-top: 1px;
+    text-decoration: none;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.slide {
+	display: none
+}
